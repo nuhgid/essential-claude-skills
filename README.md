@@ -28,18 +28,35 @@ Skills can be executed either via certain trigger words specified within each  `
 | ----------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
 | [google-workspace-credential](skills/google-workspace-credential) | Guide through creating OAuth credentials in Google Cloud Console                  | First-time Google API setup, need OAuth Client ID/Secret                               |
 | [google-workspace-auth](skills/google-workspace-auth)             | Authenticate Google Workspace accounts using OAuth and store credentials securely | Set up Gmail, Calendar, Drive, or Forms API access; configure multiple Google accounts |
+| [api-store](skills/api-store)                                     | Guide for storing API keys securely in .env files with git protection             | Need to store API keys, integrate external services, or secure credential management   |
 
 ---
 
 ## Installation
 
-### Method 1: Direct Installation
+### Method 1: Direct Installation (Recommended for Non-Coders)
 
 This assumes that you already have a repository that you'd like to install these skills into.
 
 The easiest way for non-coders like myself is by copying the [link to this repo](https://github.com/nuhgid/essential-claude-skills), or a [specific folder](https://github.com/nuhgid/essential-claude-skills/tree/main/skills) for that skill.
 
 You can enter this prompt into Claude Code, Codex, or other platforms:
+
+```
+Please install the skills from this repository into my .claude/skills directory:
+https://github.com/nuhgid/essential-claude-skills
+
+Make sure to copy all SKILL.md files and any references folders to maintain the complete documentation.
+```
+
+Or for a specific skill:
+
+```
+Please install the [skill-name] skill from this folder into my .claude/skills directory:
+https://github.com/nuhgid/essential-claude-skills/tree/main/skills/[skill-name]
+
+Make sure to copy the SKILL.md file and any references folders.
+```
 
 
 
@@ -81,8 +98,78 @@ cp -r essential-claude-skills/skills/google-workspace-credential ~/.claude/skill
 
 Once you've installed the skills in your repository, use these triggers to get Claude Code to help you with these tasks:
 
+### Google Workspace Setup
 
+**First-time OAuth setup:**
+```
+/google-workspace-credential
+```
+This walks you through Google Cloud Console to create OAuth credentials.
+
+**Authenticate accounts:**
+```
+/google-workspace-auth
+```
+This authenticates your Google accounts and stores credentials securely in keyring.
+
+**What you'll learn:**
+- OAuth 2.0 flow for desktop applications
+- Secure credential storage with keyring
+- Multi-account configuration patterns
+- Environment variable management
+
+### API Key Storage
+
+**Store API keys securely:**
+```
+/api-store
+```
+This guides you through secure API key storage in `.env` files with git protection.
+
+**What you'll learn:**
+- .env file best practices
+- .gitignore patterns for secrets
+- Multi-account credential management
+- File permissions for security
+- Why .env is better than shell configs
+
+**Common use cases:**
+- Notion API integration
+- Typefully automation
+- GitHub personal access tokens
+- OpenAI/Anthropic API keys
+- Any third-party service requiring API authentication
 
 ---
 
-## File
+## Skill Categories
+
+### 🔐 Authentication & Credentials
+
+**google-workspace-credential** → Create OAuth credentials in Google Cloud Console
+**google-workspace-auth** → Authenticate Google accounts with secure keyring storage
+**api-store** → Store API keys securely in .env files with git protection
+
+These skills work together for complete credential management:
+1. Use `/google-workspace-credential` + `/google-workspace-auth` for OAuth-based services (Google Workspace)
+2. Use `/api-store` for simple API key-based services (Notion, Typefully, GitHub, etc.)
+
+---
+
+## File Structure
+
+```
+essential-claude-skills/
+├── README.md
+└── skills/
+    ├── google-workspace-credential/
+    │   └── SKILL.md
+    ├── google-workspace-auth/
+    │   ├── SKILL.md
+    │   └── references/
+    │       ├── implementation.md
+    │       └── troubleshooting.md
+    └── api-store/
+        ├── SKILL.md
+        └── references/
+            └── common-services.md
