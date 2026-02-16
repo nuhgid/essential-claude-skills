@@ -112,12 +112,6 @@ This walks you through Google Cloud Console to create OAuth credentials.
 ```
 This authenticates your Google accounts and stores credentials securely in keyring.
 
-**What you'll learn:**
-- OAuth 2.0 flow for desktop applications
-- Secure credential storage with keyring
-- Multi-account configuration patterns
-- Environment variable management
-
 ### API Key Storage
 
 **Store API keys securely:**
@@ -125,51 +119,3 @@ This authenticates your Google accounts and stores credentials securely in keyri
 /api-store
 ```
 This guides you through secure API key storage in `.env` files with git protection.
-
-**What you'll learn:**
-- .env file best practices
-- .gitignore patterns for secrets
-- Multi-account credential management
-- File permissions for security
-- Why .env is better than shell configs
-
-**Common use cases:**
-- Notion API integration
-- Typefully automation
-- GitHub personal access tokens
-- OpenAI/Anthropic API keys
-- Any third-party service requiring API authentication
-
----
-
-## Skill Categories
-
-### 🔐 Authentication & Credentials
-
-**google-workspace-credential** → Create OAuth credentials in Google Cloud Console
-**google-workspace-auth** → Authenticate Google accounts with secure keyring storage
-**api-store** → Store API keys securely in .env files with git protection
-
-These skills work together for complete credential management:
-1. Use `/google-workspace-credential` + `/google-workspace-auth` for OAuth-based services (Google Workspace)
-2. Use `/api-store` for simple API key-based services (Notion, Typefully, GitHub, etc.)
-
----
-
-## File Structure
-
-```
-essential-claude-skills/
-├── README.md
-└── skills/
-    ├── google-workspace-credential/
-    │   └── SKILL.md
-    ├── google-workspace-auth/
-    │   ├── SKILL.md
-    │   └── references/
-    │       ├── implementation.md
-    │       └── troubleshooting.md
-    └── api-store/
-        ├── SKILL.md
-        └── references/
-            └── common-services.md
