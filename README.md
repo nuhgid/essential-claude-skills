@@ -1,6 +1,6 @@
 # Essential Claude Skills
 
-A beginner-friendly collection of Claude Skills for non-coders learning to build custom AI workflows.
+A beginner-friendly collection of Claude Skills for non-coders learning to build custom AI workflows that work for their specific context.
 
 ---
 
@@ -150,29 +150,6 @@ This converts your published blog articles to HTML for Substack, Medium, and Lin
 
 ---
 
-## Skill Categories
-
-### 🔐 Authentication & Credentials
-
-**google-workspace-credential** → Create OAuth credentials in Google Cloud Console
-**google-workspace-auth** → Authenticate Google accounts with secure keyring storage
-**api-store** → Store API keys securely in .env files with git protection
-
-These skills handle different credential workflows:
-- Use `/google-workspace-credential` + `/google-workspace-auth` for OAuth-based services (Google Workspace)
-- Use `/api-store` for simple API key-based services (Notion, Typefully, GitHub, OpenAI, etc.)
-
-### 📝 Content Publishing
-
-**article-to-blog** → Publish markdown articles to GitHub Pages using Quartz v4
-**article-to-html** → Convert blog articles to HTML for Substack/Medium/LinkedIn
-
-These skills work together in a two-step workflow:
-1. Run `/article-to-blog` to publish articles to your GitHub Pages blog
-2. Run `/article-to-html` to convert published articles for cross-posting
-
----
-
 ## File Structure
 
 ```
@@ -220,25 +197,6 @@ Contributions welcome. Submit pull requests with:
 
 ---
 
-## Philosophy
-
-> "Build the tools you wish existed when you started."
-
-These skills prioritize:
-- **Clarity over cleverness** - Straightforward workflows beat clever shortcuts
-- **Security by default** - Credentials never exposed, templates over direct input
-- **Real-world patterns** - Actual workflows, not hypothetical examples
-- **Learning-focused** - Designed to teach through structure and documentation
-- **Non-coder friendly** - No assumptions about technical knowledge
-
----
-
 ## License
 
 MIT License - Feel free to use these skills in your own projects.
-
----
-
-## Acknowledgments
-
-Built with [Claude Code](https://claude.com/claude-code) - An AI-powered development environment that makes coding accessible to everyone.
