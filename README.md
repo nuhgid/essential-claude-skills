@@ -29,6 +29,8 @@ Skills can be executed either via certain trigger words specified within each  `
 | [google-workspace-credential](skills/google-workspace-credential) | Guide through creating OAuth credentials in Google Cloud Console                  | First-time Google API setup, need OAuth Client ID/Secret                               |
 | [google-workspace-auth](skills/google-workspace-auth)             | Authenticate Google Workspace accounts using OAuth and store credentials securely | Set up Gmail, Calendar, Drive, or Forms API access; configure multiple Google accounts |
 | [api-store](skills/api-store)                                     | Guide for storing API keys securely in .env files with git protection             | Need to store API keys, integrate external services, or secure credential management   |
+| [article-to-blog](skills/article-to-blog)                         | Publish markdown articles with images to GitHub Pages using Quartz v4            | Finished writing an article and want to publish it to your blog with automated deployment |
+| [article-to-html](skills/article-to-html)                         | Convert published blog articles to HTML for Substack/Medium/LinkedIn             | Cross-post your blog articles to other platforms with proper image URLs and formatting |
 
 ---
 
@@ -119,3 +121,124 @@ This authenticates your Google accounts and stores credentials securely in keyri
 /api-store
 ```
 This guides you through secure API key storage in `.env` files with git protection.
+
+### Blog Publishing Workflow
+
+**Publish articles to GitHub Pages:**
+```
+/article-to-blog
+```
+This walks you through:
+- Setting up Quartz v4 blog (if needed)
+- Organizing your article files
+- Publishing to GitHub Pages
+- Automated deployment via git
+
+**Convert articles to HTML for cross-posting:**
+```
+/article-to-html
+```
+This converts your published blog articles to HTML for Substack, Medium, and LinkedIn.
+
+**What you'll learn:**
+- Quartz v4 static site generator setup
+- GitHub Pages deployment
+- Article organization patterns
+- Markdown to HTML conversion
+- Obsidian syntax support (callouts, highlights, wikilinks)
+- Cross-platform publishing workflow
+
+---
+
+## Skill Categories
+
+### 🔐 Authentication & Credentials
+
+**google-workspace-credential** → Create OAuth credentials in Google Cloud Console
+**google-workspace-auth** → Authenticate Google accounts with secure keyring storage
+**api-store** → Store API keys securely in .env files with git protection
+
+These skills handle different credential workflows:
+- Use `/google-workspace-credential` + `/google-workspace-auth` for OAuth-based services (Google Workspace)
+- Use `/api-store` for simple API key-based services (Notion, Typefully, GitHub, OpenAI, etc.)
+
+### 📝 Content Publishing
+
+**article-to-blog** → Publish markdown articles to GitHub Pages using Quartz v4
+**article-to-html** → Convert blog articles to HTML for Substack/Medium/LinkedIn
+
+These skills work together in a two-step workflow:
+1. Run `/article-to-blog` to publish articles to your GitHub Pages blog
+2. Run `/article-to-html` to convert published articles for cross-posting
+
+---
+
+## File Structure
+
+```
+essential-claude-skills/
+├── README.md
+└── skills/
+    ├── google-workspace-credential/
+    │   └── SKILL.md
+    ├── google-workspace-auth/
+    │   ├── SKILL.md
+    │   └── references/
+    │       ├── implementation.md
+    │       └── troubleshooting.md
+    ├── api-store/
+    │   ├── SKILL.md
+    │   └── references/
+    │       └── common-services.md
+    ├── article-to-blog/
+    │   ├── SKILL.md
+    │   └── references/
+    │       ├── quartz-v4-setup.md
+    │       └── file-organization.md
+    └── article-to-html/
+        ├── SKILL.md
+        └── references/
+            └── supported-markdown.md
+```
+
+---
+
+## Contributing
+
+Contributions welcome. Submit pull requests with:
+- Clear skill documentation following existing patterns
+- Real-world use cases demonstrated
+- Security best practices maintained
+- Beginner-friendly explanations
+
+**Skill submission guidelines:**
+1. One skill per folder
+2. SKILL.md with frontmatter metadata
+3. References folder for additional documentation (when needed)
+4. Clear prerequisites and workflow steps
+5. Real examples, not synthetic scenarios
+
+---
+
+## Philosophy
+
+> "Build the tools you wish existed when you started."
+
+These skills prioritize:
+- **Clarity over cleverness** - Straightforward workflows beat clever shortcuts
+- **Security by default** - Credentials never exposed, templates over direct input
+- **Real-world patterns** - Actual workflows, not hypothetical examples
+- **Learning-focused** - Designed to teach through structure and documentation
+- **Non-coder friendly** - No assumptions about technical knowledge
+
+---
+
+## License
+
+MIT License - Feel free to use these skills in your own projects.
+
+---
+
+## Acknowledgments
+
+Built with [Claude Code](https://claude.com/claude-code) - An AI-powered development environment that makes coding accessible to everyone.
